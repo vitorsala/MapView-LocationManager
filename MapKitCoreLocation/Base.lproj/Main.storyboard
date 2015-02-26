@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AGC-em-TWe">
+                                <rect key="frame" x="-4" y="20" width="604" height="549"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AGC-em-TWe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3dz-5Q-cHK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AGC-em-TWe" secondAttribute="trailing" constant="-33" id="GXB-HB-VHW"/>
+                            <constraint firstItem="AGC-em-TWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PCK-iT-jg3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AGC-em-TWe" secondAttribute="bottom" id="SJT-rv-ZgO"/>
+                            <constraint firstAttribute="trailing" secondItem="AGC-em-TWe" secondAttribute="trailing" id="j0l-As-IaE"/>
+                            <constraint firstItem="AGC-em-TWe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ulg-OZ-Tp3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GXB-HB-VHW"/>
+                                <exclude reference="SJT-rv-ZgO"/>
+                                <exclude reference="ulg-OZ-Tp3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="AGC-em-TWe" id="BY5-Et-I5N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="628"/>
+        </scene>
+    </scenes>
+</document>
