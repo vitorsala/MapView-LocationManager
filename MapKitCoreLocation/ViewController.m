@@ -28,7 +28,7 @@
     _mapView.showsUserLocation = true;
     _mapView.userTrackingMode = true;
 
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(test)];
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(test:)];
     [_mapView addGestureRecognizer:gesture];
 
     if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
@@ -51,8 +51,10 @@
     [_mapView addAnnotation:[[Annotation alloc] initWithCoordinate:_coordinate abdTitle:@"title"]];
 }
 
--(void)test{
-    [_mapView addAnnotation:[[Annotation alloc] initWithCoordinate:_coordinate abdTitle:@"title"]];
+-(void)test:(UITapGestureRecognizer *)sender{
+    CGPoint point = [sender locationInView:self.view];
+    CLLocationCoordinate2D coord = [_mapView convertPoint:point toCoordinateFromView:self.view];
+    [_mapView addAnnotation:[[Annotation alloc] initWithCoordinate:coord abdTitle:@"title"]];
 }
 
 @end

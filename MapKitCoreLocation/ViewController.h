@@ -26,5 +26,7 @@
 - (IBAction)btnLock:(id)sender;
 
 - (IBAction)btnCreatePoint:(id)sender;
+
+-(void)test:(UITapGestureRecognizer *)sender;
 @end
 
