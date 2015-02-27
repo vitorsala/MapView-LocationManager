@@ -10,12 +10,21 @@
 #import <MapKit/MKMapView.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Annotation.h"
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property CLLocationManager *locationManager;
 
+@property CLLocationCoordinate2D coordinate;
+
+- (IBAction)btnLock:(id)sender;
+
+- (IBAction)btnCreatePoint:(id)sender;
 @end
 

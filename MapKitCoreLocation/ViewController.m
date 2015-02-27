@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    [self.locationManager requestWhenInUseAuthorization];
-//    [self.locationManager requestAlwaysAuthorization];
-
     _locationManager = [[CLLocationManager alloc] init];
 
     [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -30,6 +27,9 @@
 
     _mapView.showsUserLocation = true;
     _mapView.userTrackingMode = true;
+
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(test)];
+    [_mapView addGestureRecognizer:gesture];
 
     if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
@@ -42,6 +42,17 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-//    [_mapView setRegion:MKCoordinateRegionMakeWithDistance([[locations lastObject] coordinate], 200, 200) animated:true];
+    _coordinate = [[locations lastObject] coordinate];
 }
+- (IBAction)btnLock:(id)sender {
+    _mapView.userTrackingMode = true;
+}
+- (IBAction)btnCreatePoint:(id)sender{
+    [_mapView addAnnotation:[[Annotation alloc] initWithCoordinate:_coordinate abdTitle:@"title"]];
+}
+
+-(void)test{
+    [_mapView addAnnotation:[[Annotation alloc] initWithCoordinate:_coordinate abdTitle:@"title"]];
+}
+
 @end
