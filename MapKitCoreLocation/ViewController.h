@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Annotation.h"
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -26,6 +26,8 @@
 - (IBAction)btnLock:(id)sender;
 
 - (IBAction)btnCreatePoint:(id)sender;
+
+- (IBAction)btnClear:(id)sender;
 
 -(void)test:(UITapGestureRecognizer *)sender;
 @end
